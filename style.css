@@ -1,0 +1,44 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(120deg, #391a15, #1d0405);
+    color: rgb(253, 213, 213);
+    padding: 30 px;
+}
+
+h1{
+        text-align: center;
+    }
+    
+.creator input,
+.creator textarea,
+.creator button{
+    width: 50%;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    align-content: center;
+}
+.creator button {
+    background: #6c63ff;
+    color: white;
+    cursor: pointer;
+}
+
+.capsule {
+    background: rgba(255,255,255,0.08);
+    margin: 20px auto;
+    padding: 15px;
+    max-width: 500px;
+    border-radius: 12px;
+    position: relative;
+}
+
+.locked {
+    filter: blur(6px);
+}
+.countdown {
+    margin-top: 10px;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}

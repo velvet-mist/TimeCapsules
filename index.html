@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="eng">
+<head>
+    <meta charset="UTF-8">
+    <title>Digital Time Capsule</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<h1> Digital Time Capsule</h1>
+<section class="creator">
+    <input type="text" id="title" placeholder="Capsule Title">
+    <textarea id="message" placeholder="write your message..."></textarea>
+    <input type="datetime-local" id="unlockTime">
+    <input type="file" id="imageInput" accept="image/*">
+    <button onclick="createCapsule()">Seal Capsule</button>
+    </section>
+
+<section id="capsules"></section>
+<script src="script.js"></script>
+</body>
+</html>
