@@ -2,20 +2,43 @@
 <html lang="eng">
 <head>
     <meta charset="UTF-8">
-    <title>Digital Time Capsule</title>
+    <title>Birthday Capsule</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<h1> Digital Time Capsule</h1>
-<section class="creator">
-    <input type="text" id="title" placeholder="Capsule Title">
-    <textarea id="message" placeholder="write your message..."></textarea>
-    <input type="datetime-local" id="unlockTime">
-    <input type="file" id="imageInput" accept="image/*">
-    <button onclick="createCapsule()">Seal Capsule</button>
-    </section>
 
-<section id="capsules"></section>
-<script src="script.js"></script>
+    <main class="container">
+
+        <h1>January 2 Capsule</h1>
+
+        <!-- Countdown Timer -->
+        <div id="timer" class="timer">
+            Loading...
+        </div>
+
+        <!-- CARD GRID (4 cards) -->
+        <section id="cardGrid" class="card-grid">
+            <!-- Cards injected by JS -->
+        </section>
+
+        <!-- MESSAGE VIEW (5 messages per card) -->
+        <section id="messageView" class="message-view hidden">
+
+            <button class="back-btn" onclick="closeMessages()">
+                ← Back
+            </button>
+
+            <div id="messages" class="messages">
+                <!-- Messages injected by JS -->
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- JS -->
+    <script src="script.js"></script>
+
 </body>
 </html>

@@ -1,44 +1,159 @@
+/* -----------------------------
+   RESET & BASE
+------------------------------*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    background: linear-gradient(120deg, #391a15, #1d0405);
-    color: rgb(253, 213, 213);
-    padding: 30 px;
+    min-height: 100vh;
+    font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+    background: linear-gradient(135deg, #0f0f1a, #1b1b2f);
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-h1{
-        text-align: center;
-    }
-    
-.creator input,
-.creator textarea,
-.creator button{
-    width: 50%;
+/* -----------------------------
+   LAYOUT
+------------------------------*/
+.container {
+    width: 100%;
+    max-width: 900px;
+    padding: 30px 20px 40px;
+}
+
+h1 {
+    text-align: center;
+    font-weight: 600;
+    letter-spacing: 0.5px;
     margin-bottom: 10px;
-    padding: 10px;
-    border-radius: 8px;
-    border: none;
-    align-content: center;
 }
-.creator button {
-    background: #6c63ff;
-    color: white;
+
+/* -----------------------------
+   TIMER
+------------------------------*/
+.timer {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 0.95rem;
+    opacity: 0.85;
+}
+
+/* -----------------------------
+   CARD GRID
+------------------------------*/
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(12px);
+    border-radius: 18px;
+    padding: 35px 20px;
+    text-align: center;
     cursor: pointer;
+    transition: 
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        background 0.3s ease;
 }
 
-.capsule {
-    background: rgba(255,255,255,0.08);
-    margin: 20px auto;
-    padding: 15px;
-    max-width: 500px;
-    border-radius: 12px;
-    position: relative;
+.card h3 {
+    font-weight: 500;
+    margin-bottom: 8px;
 }
 
-.locked {
-    filter: blur(6px);
+.card p {
+    font-size: 0.85rem;
+    opacity: 0.75;
 }
-.countdown {
-    margin-top: 10px;
+
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+    background: rgba(255, 255, 255, 0.12);
+}
+
+/* Locked state handled by JS via opacity + cursor */
+
+/* -----------------------------
+   MESSAGE VIEW
+------------------------------*/
+.message-view {
+    animation: fadeIn 0.4s ease;
+}
+
+.messages {
+    margin-top: 20px;
+}
+
+.message {
+    background: rgba(255, 255, 255, 0.07);
+    border-radius: 14px;
+    padding: 16px 18px;
+    margin-bottom: 12px;
+    line-height: 1.5;
+    font-size: 0.95rem;
+    transition: transform 0.2s ease;
+}
+
+.message:hover {
+    transform: translateX(4px);
+}
+
+/* -----------------------------
+   BACK BUTTON
+------------------------------*/
+.back-btn {
+    background: none;
+    border: none;
+    color: #b7b7ff;
     font-size: 0.9rem;
-    opacity: 0.8;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.back-btn:hover {
+    text-decoration: underline;
+}
+
+/* -----------------------------
+   UTILITIES
+------------------------------*/
+.hidden {
+    display: none;
+}
+
+/* -----------------------------
+   ANIMATIONS
+------------------------------*/
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* -----------------------------
+   RESPONSIVE
+------------------------------*/
+@media (max-width: 600px) {
+    .card-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .container {
+        padding: 20px 15px 30px;
+    }
 }
